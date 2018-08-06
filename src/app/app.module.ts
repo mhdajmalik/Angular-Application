@@ -2,19 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
+//custom module
+import { DashboardModule } from '../app/dashboard/dashboard.module';
+import { SharedModule } from '../app/shared/shared.module';
+
+
+//services
+import { HttpService } from '../app/shared/services/http.service'
+
 import { AppComponent } from './app.component';
-import { DashboardPageComponent } from './dashboard/components/dashboard-page/dashboard-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SharedModule,
+    DashboardModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpService],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

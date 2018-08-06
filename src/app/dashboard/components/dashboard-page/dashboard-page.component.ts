@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service'
 
 @Component({
-  selector: 'app-dashboard-page',
+  selector: 'dashboard-page',
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.css']
 })
