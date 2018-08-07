@@ -15,6 +15,12 @@ export class DashboardPageComponent implements OnInit {
   constructor(private dashboardService:DashboardService) { }
 
   ngOnInit() {
+    var dummyParam = {
+
+    };
+
+
+
     this.getViewContent();
   }
 

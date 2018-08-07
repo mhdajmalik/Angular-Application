@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild, Input, ElementRef } from '@angular/core';
 declare var $: any;
- 
+
 declare var GridList: any;
 
 @Component({
@@ -10,16 +10,18 @@ declare var GridList: any;
 })
 export class GridLayoutComponent implements AfterViewInit {
 
-  @ViewChild('gridList') grid: ElementRef;
+  @ViewChild('gridContainer') grid: ElementRef;
   constructor() { }
 
   ngAfterViewInit() {
-    var items = ['1','2','3'];
+    $(this.grid.nativeElement).gridList({
+      lanes: 8,
+      direction: 'horizontal',
+      widthHeightRatio: 3.5,
+      heightToFontSizeRatio: 0.87
+    });
 
-    
-
-    console.log(this.grid);
-    $(this.grid.nativeElement).gridList({ lanes: 3 }, { handle: '.title' });
+      $(this.grid.nativeElement).gridList('resize', 8); // lanes given as 8 means 8 column
   }
 
 }
