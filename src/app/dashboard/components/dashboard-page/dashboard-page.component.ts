@@ -20,12 +20,16 @@ export class DashboardPageComponent implements OnInit {
     };
 
 
-
-    this.getViewContent();
+ 
   }
 
   getViewContent(){
-    this.dashboardService.getViewContent();
+    alert('ok');
+    this.dashboardService.getViewContent((response)=>{
+      console.log('succes');
+    },(response)=>{
+      console.log('failure');
+    });
   }
 
 }

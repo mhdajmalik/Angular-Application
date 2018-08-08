@@ -9,6 +9,8 @@ import { SharedModule } from '../app/shared/shared.module';
 
 //services
 import { HttpService } from '../app/shared/services/http.service'
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DdsapService } from '../app/shared/services/ddsap.service';
 
 import { AppComponent } from './app.component';
 
@@ -20,9 +22,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     SharedModule,
-    DashboardModule
-  ],
-  providers: [HttpService],
+    DashboardModule,
+    HttpClientModule,
+    ],
+  providers: [HttpService,DdsapService],
   bootstrap: [AppComponent],
   
 })

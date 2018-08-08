@@ -8,14 +8,14 @@ declare var GridList: any;
   templateUrl: './grid-layout.component.html',
   styleUrls: ['./grid-layout.component.css']
 })
-export class GridLayoutComponent implements AfterViewInit {
+export class GridLayoutComponent implements OnInit {
 
   @ViewChild('gridContainer') grid: ElementRef;
   constructor() { }
 
-  ngAfterViewInit() {
+  ngOnInit() {
 
-    var items = ["1", "2", "3", "4"]
+    var items = [1, 2, 3, 4]
     for (var i = 0; i < 4; i++) {
 
       var item = document.createElement('tile-element');
@@ -35,8 +35,7 @@ export class GridLayoutComponent implements AfterViewInit {
         'data-x': i,
         'data-y': i,
         'data-id': "wid_" + i
-      });
-
+      }); 
       $(this.grid.nativeElement).append(lielm);
     }
 
