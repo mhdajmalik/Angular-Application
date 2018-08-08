@@ -1,6 +1,9 @@
-li {
+.itemcontainer {
     width: 100px;
     height: 100px;
     border: 1px solid rebeccapurple;
 }
 
+.menu{
+    padding:5px 15px;
+}
